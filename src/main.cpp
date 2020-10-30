@@ -5,7 +5,7 @@
 
 int main()
 {
-  // Make sure std::cout ha been used before std::wcout so that std::cout
+  // Make sure std::cout has been used before std::wcout so that std::cout
   // actually works under WSL.
   std::cout << LAK_SGR_RESET;
 
