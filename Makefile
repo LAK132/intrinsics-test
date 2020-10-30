@@ -1,10 +1,8 @@
 BINDIR = bin
 OBJDIR = obj
 
-CXX = g++-8
-CC  = gcc-8
-AR  = ar
-RL  = ranlib
+CXX = g++
+CC  = gcc
 
 release: OPTIMISATION := -g0 -O3
 release: tests.elf
@@ -12,8 +10,7 @@ release: tests.elf
 debug: OPTIMISATION := -g3 -O0
 debug: tests.elf
 
-CXXFLAGS = $(OPTIMISATION) -no-pie -Wall -Werror -Wfatal-errors -pthread -std=c++17 `sdl2-config --cflags`
-CCFLAGS  = $(OPTIMISATION) -no-pie -Wall -Werror -Wfatal-errors -pthread -std=c99 -Wno-unused-variable -Wno-unused-result -Wno-unused-function -ldl
+CXXFLAGS = $(OPTIMISATION) -no-pie -Wall -Werror -Wfatal-errors -mavx -pthread -std=c++17
 
 INCDIRS = inc inc/lak/inc
 LIBDIRS = $(OBJDIR)
